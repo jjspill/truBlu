@@ -25,4 +25,4 @@ Here's a rundown of the main technologies and libraries used in building TruBlu:
 - **Database:** The site uses a SQLite database for data storage.
 - **Security Libraries:** Python's hashlib and uuid libraries are used for password hashing and salting. This is vital for securely storing user passwords.
 - **User Session Management:** Flask sessions are utilized to manage user sessions, allowing the system to differentiate between logged-in and logged-out users.
-- **Front-End:** The front-end of the site appears to be built using HTML and CSS. Flask's render_template is used to return HTML files.
+- **Front-End:** The front-end uses HTML and CSS. Flask's render_template is used to return HTML files.
