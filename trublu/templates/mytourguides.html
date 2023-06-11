@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 style="padding-left: 60px;"> Your Tour Guides </h2>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <div class="d-flex flex-row mb-3"><img src="{{url_for('download_file', filename=first['photofile'])}}" alt="profile picture" width="50" height="50" style="padding-right:5px;">
+                        <div class="d-flex flex-column ml-2"><span>{{ first.firstname }} {{  first.lastname  }}</span><span class="text-black-50"> {{ first.majorone }}</span><span class="ratings"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span></div>
+                    </div>
+                    <h6>{{ first.aboutme }}</h6>
+                    <div class="d-flex justify-content-between install mt-3"><span>Tour Cost: ${{ first.rate }}</span><span class="text-primary"><a href="/tg/{{ first.id }}" style="text-decoration:none;">View</a>&nbsp;<i class="fa fa-angle-right"></i></span></div>
+                    <p> </p>
+                    <div class="d-flex flex-row mb-3"><img src="{{url_for('download_file', filename=second['photofile'])}}" alt="profile picture" width="50" height="50" style="padding-right:5px;">
+                        <div class="d-flex flex-column ml-2"><span>{{ second.firstname }} {{  second.lastname  }}</span><span class="text-black-50"> {{ second.majorone }}</span><span class="ratings"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span></div>
+                    </div>
+                    <h6>{{ second.aboutme }}</h6>
+                    <div class="d-flex justify-content-between install mt-3"><span>Tour Cost: ${{ second.rate }}</span><span class="text-primary"><a href="/tg/{{ second.id }}" style="text-decoration:none;">View</a>&nbsp;<i class="fa fa-angle-right"></i></span></div>
+                    <p> </p>
+                    <div class="d-flex flex-row mb-3"><img src="{{url_for('download_file', filename=third['photofile'])}}" alt="profile picture" width="50" height="50" style="padding-right:5px;">
+                        <div class="d-flex flex-column ml-2"><span>{{ third.firstname }} {{ third.lastname  }}</span><span class="text-black-50"> {{ third.majorone }}</span><span class="ratings"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span></div>
+                    </div>
+                    <h6>{{ third.aboutme }}</h6>
+                    <div class="d-flex justify-content-between install mt-3"><span>Tour Cost: ${{ third.rate }}</span><span class="text-primary"><a href="/tg/{{ third.id }}" style="text-decoration:none;">View</a>&nbsp;<i class="fa fa-angle-right"></i></span></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

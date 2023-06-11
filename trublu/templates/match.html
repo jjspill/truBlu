@@ -1,0 +1,389 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+  <div class="row" style="padding-top: 2.5%;">
+    <div class="col">
+    </div>
+    <div class="col-7">
+      <h1>TruBlu Tour Guide Match Maker</h1>
+    </div>
+    <div class="col">
+    </div>
+  </div>
+  <div class="row" style="padding-top: 2.5%;">
+    <div class="col">
+    </div>
+    <div class="col-7">
+      <p><strong>How it works: </strong>Simply fill out the below form as accurately as possible and our proprietary match making algorithm will pair you with your best-match tour guide! You and your tour guide will share similar interests, intended field of study, and in-state residency status! This will help ensure that your tour guide is the best person to help you decide if the University of Michigan is for you!</p>
+    </div>
+    <div class="col">
+    </div>
+  </div>
+  <form style="padding-bottom: 2.5%;" action= "/mytourguides/" method="post" enctype="multipart/form-data">
+      <div class="form-check" style="margin-top: 1%;">
+          <input class="form-check-input" type="radio" name="state" value="in">
+          <label class="form-check-label" for="flexRadioDefault1">
+            In-State
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="state" value="out">
+          <label class="form-check-label" for="flexRadioDefault2">
+            Out-of-State
+          </label>
+      </div>
+      <div class="form-group" style="margin-top: 1%;">
+        <label for="school">Intended College</label>
+        <select class="selectpicker form-control" name="school">
+             <option>Architecture & Urban Planning</option>
+             <option>Art & Design</option>
+             <option>Business</option>
+             <option>Education</option>
+             <option>Engineering</option>
+             <option>Environment and Sustainability</option>
+             <option>Information</option>
+             <option>Kinesiology</option>
+             <option>Literature, Science, and the Arts</option>
+             <option>Music, Theatre & Dance</option>
+             <option>Nursing</option>
+             <option>Public Policy</option>
+             <option>Social Work</option>
+        </select>
+      </div>
+      <div class="form-group" style="margin-top: 1%;">
+        <label for="prefered_major1">Preferred Major 1</label>
+        <select class="selectpicker form-control" name="major1">
+          <option>N/A</option>
+          <option>Actuarial Mathematics</option>
+          <option>Aerospace Engineering</option>
+          <option>Afroamerican and African Studies</option>
+          <option>American Culture</option>
+          <option>Anthropology</option>
+          <option>Applied Exercise Science</option>
+          <option>Architecture</option>
+          <option>Art and Design</option>
+          <option>Arts and Ideas in the Humanities</option>
+          <option>Asian Studies</option>
+          <option>Astronomy and Astrophysics</option>
+          <option>Biochemistry</option>
+          <option>Biology</option>
+          <option>Biology, Health, and Society</option>
+          <option>Biomedical Engineering</option>
+          <option>Biomolecular Science</option>
+          <option>Biophysics</option>
+          <option>Biopsychology, Cognition, and Neuroscience</option>
+          <option>Business</option>
+          <option>Cellular and Molecular Biomedical Science</option>
+          <option>Chemical Engineering</option>
+          <option>Chemical Science</option>
+          <option>Chemistry</option>
+          <option>Civil Engineering</option>
+          <option>Classical Archaeology</option>
+          <option>Classical Civilization</option>
+          <option>Classical Languages and Literatures</option>
+          <option>Climate and Meteorology</option>
+          <option>Cognitive Science</option>
+          <option>Communication and Media</option>
+          <option>Community and Global Public Health</option>
+          <option>Comparative Culture and Identity</option>
+          <option>Comparative Literature</option>
+          <option>Composition</option>
+          <option>Computer Engineering</option>
+          <option>Computer Science</option>
+          <option>Creative Writing and Literature</option>
+          <option>Dance</option>
+          <option>Data Science</option>
+          <option>Dental Hygiene</option>
+          <option>Drama</option>
+          <option>Earth and Environmental Sciences</option>
+          <option>Ecology, Evolution, and Biodiversity</option>
+          <option>Economics</option>
+          <option>Electrical Engineering</option>
+          <option>Elementary Teacher Education</option>
+          <option>Engineering Physics</option>
+          <option>English</option>
+          <option>Environment</option>
+          <option>Environmental Engineering</option>
+          <option>Ethnic Studies</option>
+          <option>Evolutionary Anthropology</option>
+          <option>Film, Television, and Media</option>
+          <option>French and Francophone Studies</option>
+          <option>Program	School/College</option>
+          <option>Gender and Health</option>
+          <option>General Studies</option>
+          <option>German</option>
+          <option>Global Environment and Health</option>
+          <option>Greek (Ancient) Language and Literature</option>
+          <option>Greek (Modern) Language and Culture</option>
+          <option>History</option>
+          <option>History of Art</option>
+          <option>Industrial and Operations Engineering</option>
+          <option>Informatics</option>
+          <option>Information Analysis</option>
+          <option>Interarts</option>
+          <option>Interdisciplinary Astronomy</option>
+          <option>Interdisciplinary Chemical Sciences</option>
+          <option>Interdisciplinary Physics</option>
+          <option>International Security, Norms, and Cooperation</option>
+          <option>International Studies</option>
+          <option>Italian</option>
+          <option>Jazz & Contemporary</option>
+          <option>Judaic Studies</option>
+          <option>Latin American and Caribbean Studies</option>
+          <option>Latin Language and Literature</option>
+          <option>Latina/Latino Studies</option>
+          <option>Linguistics</option>
+          <option>Materials Science and Engineering</option>
+          <option>Mathematical Sciences</option>
+          <option>Mathematics</option>
+          <option>Mathematics of Finance and Risk Management</option>
+          <option>Mechanical Engineering</option>
+          <option>Microbiology</option>
+          <option>Middle East Studies</option>
+          <option>Middle Eastern and North African Studies</option>
+          <option>Molecular, Cellular, and Developmental Biology</option>
+          <option>Movement Science</option>
+          <option>Music</option>
+          <option>Music Education</option>
+          <option>Music Theory</option>
+          <option>Musical Theatre</option>
+          <option>Musicology</option>
+          <option>Naval Architecture and Marine Engineering</option>
+          <option>Neuroscience</option>
+          <option>Nuclear Engineering and Radiological Sciences</option>
+          <option>Nursing</option>
+          <option>Organ</option>
+          <option>Organizational Studies</option>
+          <option>Performing Arts Technology</option>
+          <option>Pharmaceutical Sciences</option>
+          <option>Philosophy</option>
+          <option>Philosophy, Politics, and Economics</option>
+          <option>Physics</option>
+          <option>Piano</option>
+          <option>Plant Biology</option>
+          <option>Polish</option>
+          <option>Political Economy and Development</option>
+          <option>Political Science</option>
+          <option>Psychology</option>
+          <option>Public Health Sciences</option>
+          <option>Public Policy</option>
+          <option>Pure Mathematics</option>
+          <option>Robotics</option>
+          <option>Romance Languages and Literatures</option>
+          <option>Russian</option>
+          <option>Russian, East European, and Eurasian Studies</option>
+          <option>Secondary Teacher Education</option>
+          <option>Social Theory and Practice</option>
+          <option>Sociology</option>
+          <option>Space and Science Engineering</option>
+          <option>Spanish</option>
+          <option>Sport Management</option>
+          <option>Statistics</option>
+          <option>Strings</option>
+          <option>Structural Biology</option>
+          <option>Theatre & Drama</option>
+          <option>Urban Technology</option>
+          <option>User Experience Design</option>
+          <option>Voice</option>
+          <option>Winds and Percussion</option>
+          <option>Women’s and Gender Studies</option>
+        </select>
+      </div>
+      <div class="form-group" style="margin-top: 1%;">
+        <label for="prefered_major2">Preferred Major 2</label>
+        <select class="selectpicker form-control" name="major2">
+          <option>N/A</option>
+          <option>Actuarial Mathematics</option>
+          <option>Aerospace Engineering</option>
+          <option>Afroamerican and African Studies</option>
+          <option>American Culture</option>
+          <option>Anthropology</option>
+          <option>Applied Exercise Science</option>
+          <option>Architecture</option>
+          <option>Art and Design</option>
+          <option>Arts and Ideas in the Humanities</option>
+          <option>Asian Studies</option>
+          <option>Astronomy and Astrophysics</option>
+          <option>Biochemistry</option>
+          <option>Biology</option>
+          <option>Biology, Health, and Society</option>
+          <option>Biomedical Engineering</option>
+          <option>Biomolecular Science</option>
+          <option>Biophysics</option>
+          <option>Biopsychology, Cognition, and Neuroscience</option>
+          <option>Business</option>
+          <option>Cellular and Molecular Biomedical Science</option>
+          <option>Chemical Engineering</option>
+          <option>Chemical Science</option>
+          <option>Chemistry</option>
+          <option>Civil Engineering</option>
+          <option>Classical Archaeology</option>
+          <option>Classical Civilization</option>
+          <option>Classical Languages and Literatures</option>
+          <option>Climate and Meteorology</option>
+          <option>Cognitive Science</option>
+          <option>Communication and Media</option>
+          <option>Community and Global Public Health</option>
+          <option>Comparative Culture and Identity</option>
+          <option>Comparative Literature</option>
+          <option>Composition</option>
+          <option>Computer Engineering</option>
+          <option>Computer Science</option>
+          <option>Creative Writing and Literature</option>
+          <option>Dance</option>
+          <option>Data Science</option>
+          <option>Dental Hygiene</option>
+          <option>Drama</option>
+          <option>Earth and Environmental Sciences</option>
+          <option>Ecology, Evolution, and Biodiversity</option>
+          <option>Economics</option>
+          <option>Electrical Engineering</option>
+          <option>Elementary Teacher Education</option>
+          <option>Engineering Physics</option>
+          <option>English</option>
+          <option>Environment</option>
+          <option>Environmental Engineering</option>
+          <option>Ethnic Studies</option>
+          <option>Evolutionary Anthropology</option>
+          <option>Film, Television, and Media</option>
+          <option>French and Francophone Studies</option>
+          <option>Program	School/College</option>
+          <option>Gender and Health</option>
+          <option>General Studies</option>
+          <option>German</option>
+          <option>Global Environment and Health</option>
+          <option>Greek (Ancient) Language and Literature</option>
+          <option>Greek (Modern) Language and Culture</option>
+          <option>History</option>
+          <option>History of Art</option>
+          <option>Industrial and Operations Engineering</option>
+          <option>Informatics</option>
+          <option>Information Analysis</option>
+          <option>Interarts</option>
+          <option>Interdisciplinary Astronomy</option>
+          <option>Interdisciplinary Chemical Sciences</option>
+          <option>Interdisciplinary Physics</option>
+          <option>International Security, Norms, and Cooperation</option>
+          <option>International Studies</option>
+          <option>Italian</option>
+          <option>Jazz & Contemporary</option>
+          <option>Judaic Studies</option>
+          <option>Latin American and Caribbean Studies</option>
+          <option>Latin Language and Literature</option>
+          <option>Latina/Latino Studies</option>
+          <option>Linguistics</option>
+          <option>Materials Science and Engineering</option>
+          <option>Mathematical Sciences</option>
+          <option>Mathematics</option>
+          <option>Mathematics of Finance and Risk Management</option>
+          <option>Mechanical Engineering</option>
+          <option>Microbiology</option>
+          <option>Middle East Studies</option>
+          <option>Middle Eastern and North African Studies</option>
+          <option>Molecular, Cellular, and Developmental Biology</option>
+          <option>Movement Science</option>
+          <option>Music</option>
+          <option>Music Education</option>
+          <option>Music Theory</option>
+          <option>Musical Theatre</option>
+          <option>Musicology</option>
+          <option>Naval Architecture and Marine Engineering</option>
+          <option>Neuroscience</option>
+          <option>Nuclear Engineering and Radiological Sciences</option>
+          <option>Nursing</option>
+          <option>Organ</option>
+          <option>Organizational Studies</option>
+          <option>Performing Arts Technology</option>
+          <option>Pharmaceutical Sciences</option>
+          <option>Philosophy</option>
+          <option>Philosophy, Politics, and Economics</option>
+          <option>Physics</option>
+          <option>Piano</option>
+          <option>Plant Biology</option>
+          <option>Polish</option>
+          <option>Political Economy and Development</option>
+          <option>Political Science</option>
+          <option>Psychology</option>
+          <option>Public Health Sciences</option>
+          <option>Public Policy</option>
+          <option>Pure Mathematics</option>
+          <option>Robotics</option>
+          <option>Romance Languages and Literatures</option>
+          <option>Russian</option>
+          <option>Russian, East European, and Eurasian Studies</option>
+          <option>Secondary Teacher Education</option>
+          <option>Social Theory and Practice</option>
+          <option>Sociology</option>
+          <option>Space and Science Engineering</option>
+          <option>Spanish</option>
+          <option>Sport Management</option>
+          <option>Statistics</option>
+          <option>Strings</option>
+          <option>Structural Biology</option>
+          <option>Theatre & Drama</option>
+          <option>Urban Technology</option>
+          <option>User Experience Design</option>
+          <option>Voice</option>
+          <option>Winds and Percussion</option>
+          <option>Women’s and Gender Studies</option>
+        </select>
+      </div>
+      <div class="form-group" style="margin-top: 1%;">
+        <label for="ec1">Intended Extracurricular #1</label>
+        <select class="selectpicker form-control" name="ec1">
+             <option>N/A</option>
+             <option>Activism/Social Justice Clubs</option>
+             <option>Art/Museum Clubs</option>
+             <option>Business Clubs</option>
+             <option>Community Service Clubs</option>
+             <option>Dance/Theater Clubs</option>
+             <option>Greek Life (social)</option>
+             <option>Greek Life (professional)</option>
+             <option>Intramural/Recreational Sports</option>
+             <option>Musical Clubs</option>
+             <option>Mission Trips</option>
+             <option>Religious Club</option>
+             <option>Wilderness Trips</option>
+        </select>
+      </div>
+      <div class="form-group" style="margin-top: 1%;">
+        <label for="ec2">Intended Extracurricular #3</label>
+        <select class="selectpicker form-control" name="ec2">
+             <option>N/A</option>
+             <option>Activism/Social Justice Clubs</option>
+             <option>Art/Museum Clubs</option>
+             <option>Business Clubs</option>
+             <option>Community Service Clubs</option>
+             <option>Dance/Theater Clubs</option>
+             <option>Greek Life (social)</option>
+             <option>Greek Life (professional)</option>
+             <option>Intramural/Recreational Sports</option>
+             <option>Musical Clubs</option>
+             <option>Mission Trips</option>
+             <option>Religious Club</option>
+             <option>Wilderness Trips</option>
+        </select>
+      </div>
+      <div class="form-group" style="margin-top: 1%;">
+        <label for="ec3">Intended Extracurricular #3</label>
+        <select class="selectpicker form-control" name="ec3">
+             <option>N/A</option>
+             <option>Activism/Social Justice Clubs</option>
+             <option>Art/Museum Clubs</option>
+             <option>Business Clubs</option>
+             <option>Community Service Clubs</option>
+             <option>Dance/Theater Clubs</option>
+             <option>Greek Life (social)</option>
+             <option>Greek Life (professional)</option>
+             <option>Intramural/Recreational Sports</option>
+             <option>Musical Clubs</option>
+             <option>Mission Trips</option>
+             <option>Religious Club</option>
+             <option>Wilderness Trips</option>
+        </select>
+      </div>
+    <button type="submit" style="margin-top: 2.5%;"class="btn btn-primary">Match Me!</button>
+  </form>
+</div>
+{% endblock %}

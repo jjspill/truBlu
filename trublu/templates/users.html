@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<h1> Your Profile </h1>
+<p> <b> Username: </b> {{ users_slug }} </p>
+{% for student in students %}
+  {% if users_slug == student.username %}
+    <p> <b> First Name: </b> {{ student.firstname }} </p>
+    <p> <b> Last Name: </b> {{ student.lastname }} </p>
+    <p> <b> Email: </b> {{ student.email }} </p>
+    <p> <b> Phone Number: </b> {{ student.phonenumber }} </p>
+  {% endif %}
+{% endfor %}
+{% if users_slug == session['username'] %}
+    <p> <a href= "/accounts/edit/" > Edit profile </a> </p>
+{% endif %}
+{% if users_slug == session['username'] %}
+    <form action="/accounts/logout/" method="post" enctype="multipart/form-data">
+      <input type="submit" name="logout" value="Logout"/>
+    </form>
+{% endif %}
+
+{% endblock %}

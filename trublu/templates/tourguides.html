@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+<h2 style="padding-left: 60px;"> Tour Guides </h2>
+    <p style="padding-left: 60px;">Want us to match you with your optimal tour guide instead of browsing? Click <a href="/match/" style="text-decoration: none;">here</a>!</p>
+    <div class="container mt-5">
+        <div class="row">
+            {% for tourguide in tourguides %}
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <div class="d-flex flex-row mb-3"><img src="{{url_for('download_file', filename=tourguide['photofile'])}}" alt="profile picture" width="50" height="50" style="padding-right:5px;">
+                        <div class="d-flex flex-column ml-2"><span>{{ tourguide.firstname }} {{  tourguide.lastname  }}</span><span class="text-black-50"> {{ tourguide.majorone }}</span><span class="ratings"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span></div>
+                    </div>
+                    <h6>{{ tourguide.aboutme }}</h6>
+                    <div class="d-flex justify-content-between install mt-3"><span>Tour Cost: ${{ tourguide.rate }}</span><span class="text-primary"><a href="/tg/{{ tourguide.id }}" style="text-decoration:none;">View</a>&nbsp;<i class="fa fa-angle-right"></i></span></div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+{% endblock %}

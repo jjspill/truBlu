@@ -1,0 +1,13 @@
+#!/bin/bash
+# trubludb
+
+# https://vaneyckt.io/posts/safer_bash_scripts_with_set_euxo_pipefail/ to stp on errors
+set -Eeuo pipefail
+
+if [ ! -e var/trublu.sqlite3 ]; then
+    bin/trubludb create
+fi
+
+export FLASK_ENV=development
+export FLASK_APP=trublu
+flask run --host 0.0.0.0 --port 8000
